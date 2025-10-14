@@ -1,0 +1,146 @@
+/* Custom styles to integrate Tailwind with Bootstrap Navbar */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f9ff; /* Light sky blue background */
+    position: relative;
+}
+
+/* NAVBAR IMPROVEMENTS */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly less transparent */
+    backdrop-filter: blur(12px); /* Aumentado para melhor efeito */
+    -webkit-backdrop-filter: blur(12px);
+    transition: background-color 0.3s ease-in-out;
+    color: #0c4a6e; /* Dark sky blue text */
+}
+
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #0c4a6e !important; /* Dark sky blue text */
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #0369a1 !important; /* Slightly lighter sky blue on hover */
+    font-weight: 600; /* Destaque leve no ativo */
+}
+
+/* Novo estilo para o Botão de Chamada para Ação (CTA) na Navbar */
+.btn-cta-nav {
+    display: inline-block;
+    background-color: #0369a1; /* Azul escuro para contraste */
+    color: #fff; /* Texto branco */
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid #0369a1; /* Borda da mesma cor */
+}
+
+.btn-cta-nav:hover {
+    background-color: #0c4a6e;
+    color: #fcd34d; /* Amarelo no hover para um toque de marca */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* FIM NAVBAR IMPROVEMENTS */
+
+/* NOVO ESTILO DO CARROSSEL PRINCIPAL */
+.hero-carousel .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.hero-carousel .carousel-caption {
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 3rem; /* Espaçamento da base para não cobrir o rodapé */
+}
+
+.hero-carousel {
+    /* Garante que o carrossel use a altura total da tela (vh) */
+    height: 100vh; 
+}
+/* FIM NOVO ESTILO DO CARROSSEL PRINCIPAL */
+
+.btn-custom-yellow {
+    background-color: #fcd34d; /* Amber 300 */
+    color: #78350f; /* Amber 800 */
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-custom-yellow:hover {
+    background-color: #fbbf24; /* Amber 400 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #78350f;
+}
+
+h1, h2, h3 {
+    color: #0c4a6e; /* Dark Sky Blue */
+}
+
+.card-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Animações de scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo do botão "Voltar ao Topo" */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #fcd34d; /* Amber 300 */
+    color: #78350f; /* Amber 800 */
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Inicia oculto */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.back-to-top-btn:hover {
+    background-color: #fbbf24; /* Amber 400 */
+    transform: scale(1.1);
+}
