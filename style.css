@@ -148,3 +148,19 @@ h1, h2, h3 {
 #blocotexto {
     background-color: rgba(7, 89, 133, 0.888); /* Fundo preto com 40% de opacidade */
 }
+
+#carouselExampleCaptions .carousel-item img {
+    /* * Define uma altura máxima. 
+     * Você pode mudar 550px para qualquer valor que achar melhor (ex: 400px, 600px).
+    */
+    max-height: 550px;
+    
+    /* Isso garante que a imagem cubra a área de 550px sem distorcer. */
+    object-fit: cover;
+    
+    /* Garante que o object-fit funcione corretamente */
+    width: 100%; 
+    
+    /* Centraliza a imagem (verticalmente/horizontalmente) no corte */
+    object-position: center;
+}
