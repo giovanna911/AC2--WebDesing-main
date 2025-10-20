@@ -15,12 +15,12 @@ body {
 }
 
 .navbar-scrolled {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.492);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
-    color: #0c4a6e !important; /* Dark sky blue text */
+    color: #0c4a6e !important; /* Dark sky blue text */ 
     font-weight: 500;
     transition: color 0.2s ease-in-out;
 }
@@ -55,7 +55,7 @@ body {
 /* NOVO ESTILO DO CARROSSEL PRINCIPAL */
 .hero-carousel .carousel-item {
     height: 100vh;
-    min-height: 350px;
+    min-height: 100px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -73,7 +73,7 @@ body {
 
 .hero-carousel {
     /* Garante que o carrossel use a altura total da tela (vh) */
-    height: 100vh; 
+    height: 50vh; 
 }
 /* FIM NOVO ESTILO DO CARROSSEL PRINCIPAL */
 
