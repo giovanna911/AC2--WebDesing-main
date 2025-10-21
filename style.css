@@ -1,117 +1,256 @@
-/* Custom styles to integrate Tailwind with Bootstrap Navbar */
+/* Paleta de Cores CSS Variables */
+:root {
+    --color-primary: #075985; /* Darker Sky Blue / Sea Blue */
+    --color-secondary: #38bdf8; /* Light Sky Blue / Water Blue */
+    --color-accent: #fcd34d; /* Amber 300 / Sun Yellow */
+    --color-text-dark: #1f2937; /* Dark Gray for text */
+    --color-bg-light: #f0f9ff; /* Very light blue background */
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f0f9ff; /* Light sky blue background */
+    background-color: var(--color-bg-light); 
+    color: var(--color-text-dark); /* Cor de texto padrão */
     position: relative;
+    /* Ajuste para que a seção hero comece no topo da página */
+    padding-top: 0; 
 }
 
-/* NAVBAR IMPROVEMENTS */
+/* Tipografia */
+h1, h2, h3, h4 {
+    color: var(--color-primary); 
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem; /* Aumentei um pouco para destaque */
+}
+
+/* UTILITÁRIOS BOOTSTRAP */
+/* Sobrepondo cores do tema Bootstrap para consistência */
+.text-primary { color: var(--color-primary) !important; }
+.bg-primary { background-color: var(--color-primary) !important; }
+.text-info { color: var(--color-secondary) !important; }
+.bg-secondary-subtle { background-color: rgba(56, 189, 248, 0.1) !important; }
+
+
+/* =========================== */
+/* 1. NAVBAR */
+/* =========================== */
+
 .navbar {
-    background-color: rgba(255, 255, 255, 0.85); /* Slightly less transparent */
-    backdrop-filter: blur(12px); /* Aumentado para melhor efeito */
-    -webkit-backdrop-filter: blur(12px);
-    transition: background-color 0.3s ease-in-out;
-    color: #0c4a6e; /* Dark sky blue text */
+    background-color: rgba(255, 255, 255, 0.95); /* Menos transparente para legibilidade */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
 }
 
+/* Estilo para quando a navbar é rolada */
 .navbar-scrolled {
-    background-color: rgba(255, 255, 255, 0.492);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.051);
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-logo {
+    height: 40px; /* Tamanho da logo um pouco menor */
+    width: auto;
+    border-radius: 50%; /* Se a imagem da logo for quadrada, fica circular */
+}
+
+.navbar-brand-text {
+    font-size: 1.5rem;
+    color: var(--color-primary);
 }
 
 .nav-link {
-    color: #0c4a6e !important; /* Dark sky blue text */ 
+    color: var(--color-primary) !important; 
     font-weight: 500;
-    transition: color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    padding: 8px 12px !important;
+    border-radius: 4px;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #0369a1 !important; /* Slightly lighter sky blue on hover */
-    font-weight: 600; /* Destaque leve no ativo */
+    color: var(--color-secondary) !important; 
+    background-color: rgba(56, 189, 248, 0.1); /* Um fundo sutil no hover */
+    font-weight: 600;
 }
 
-/* Novo estilo para o Botão de Chamada para Ação (CTA) na Navbar */
+/* Botão de Chamada para Ação (CTA) na Navbar */
 .btn-cta-nav {
-    display: inline-block;
-    background-color: #0369a1; /* Azul escuro para contraste */
-    color: #fff; /* Texto branco */
+    /* Usei o botão customizado primário (Azul) para contraste */
+    background-color: var(--color-primary); 
+    color: #fff; 
     font-weight: 600;
     padding: 8px 16px;
-    border-radius: 6px;
+    border-radius: 8px; /* Mais arredondado */
     transition: all 0.3s ease;
     text-decoration: none;
-    border: 2px solid #0369a1; /* Borda da mesma cor */
+    border: 2px solid var(--color-primary);
+    display: flex; /* Para centralizar ícone e texto */
+    align-items: center;
 }
 
 .btn-cta-nav:hover {
-    background-color: #0c4a6e;
-    color: #0c4a6e; /* Amarelo no hover para um toque de marca */
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: var(--color-secondary); /* Azul claro no hover */
+    border-color: var(--color-secondary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* FIM NAVBAR IMPROVEMENTS */
+/* =========================== */
+/* 2. CARROSSEL PRINCIPAL (HERO) */
+/* =========================== */
 
-/* NOVO ESTILO DO CARROSSEL PRINCIPAL */
+.hero-carousel {
+    height: 100vh; /* Ocupa a altura total da tela */
+    padding-top: 70px; /* Para compensar a navbar fixa */
+}
+
 .hero-carousel .carousel-item {
-    height: 100vh;
-    min-height: 100px;
+    height: 100%;
+    min-height: 500px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    position: relative;
+    /* Adiciona uma sobreposição escura para melhor contraste do texto */
+    z-index: 1;
 }
+
+.hero-carousel .carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay escuro */
+    z-index: 2;
+}
+
+/* Itens do carrossel (para referenciar as imagens do seu código) */
+.hero-item-1 { background-image: url('img/carousel1.png'); }
+.hero-item-2 { background-image: url('img/carousel2.png'); }
+.hero-item-3 { background-image: url('img/carousel3.png'); }
+.hero-item-4 { background-image: url('img/carousel4.png'); }
+.hero-item-5 { background-image: url('img/carousel5.png'); }
+
 
 .hero-carousel .carousel-caption {
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
-    padding-bottom: 3rem; /* Espaçamento da base para não cobrir o rodapé */
+    z-index: 3; /* Garante que o texto fique acima do overlay */
 }
 
-.hero-carousel {
-    /* Garante que o carrossel use a altura total da tela (vh) */
-    height: 50vh; 
+/* Estilo para a caixa de texto para maior legibilidade */
+.hero-text-block {
+    max-width: 64rem;
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo sutil para o texto */
+    border-radius: 10px;
 }
-/* FIM NOVO ESTILO DO CARROSSEL PRINCIPAL */
+
+/* Efeito de Sombra para o Texto do Hero */
+.carousel-caption h1, .carousel-caption p {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.4); 
+}
+
+/* =========================== */
+/* 3. BOTÕES CUSTOMIZADOS */
+/* =========================== */
 
 .btn-custom-yellow {
-    background-color: #fcd34d; /* Amber 300 */
-    color: #78350f; /* Amber 800 */
-    font-weight: 600;
+    /* Cor de destaque */
+    background-color: var(--color-accent); 
+    color: var(--color-text-dark); 
+    font-weight: 700;
     padding: 12px 24px;
     border-radius: 8px;
     transition: all 0.3s ease;
     text-decoration: none;
+    border: none;
 }
 
 .btn-custom-yellow:hover {
     background-color: #fbbf24; /* Amber 400 */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    color: #78350f;
+    transform: translateY(-3px); /* Efeito 3D leve */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    color: var(--color-text-dark);
 }
 
-h1, h2, h3 {
-    color: #0c4a6e; /* Dark Sky Blue */
-}
+/* =========================== */
+/* 4. CARDS DE DESTINO/DICAS */
+/* =========================== */
 
 .card-custom {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; /* Efeito 'spring' no hover */
+    border-radius: 12px;
 }
 
 .card-custom:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* Animações de scroll */
+.card-img-h {
+    height: 16rem; /* Altura padrão para imagens de cards */
+    object-fit: cover;
+}
+
+/* =========================== */
+/* 5. SEÇÃO DE ATIVIDADES */
+/* =========================== */
+
+.activity-icon-bg {
+    /* Ícone com o tema de cores */
+    background-color: var(--color-accent); 
+    color: var(--color-primary); 
+    width: 70px; 
+    height: 70px; 
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(252, 211, 77, 0.4);
+}
+
+.activity-img {
+    /* Altura das imagens na coluna de atividades */
+    min-height: 400px; 
+    object-fit: cover;
+}
+
+/* =========================== */
+/* 6. CARROSSEL SECUNDÁRIO */
+/* =========================== */
+
+.carousel-img-lg {
+    height: 450px; /* Altura fixa para o carrossel de paisagens */
+    object-fit: cover;
+}
+
+.carousel-caption-custom {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.carousel-caption-custom h5 {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* =========================== */
+/* 7. ANIMAÇÕES DE SCROLL */
+/* =========================== */
+/* Mantenha o código de animação do seu original */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .animate-on-scroll.is-visible {
@@ -119,55 +258,60 @@ h1, h2, h3 {
     transform: translateY(0);
 }
 
-/* Estilo do botão "Voltar ao Topo" */
+/* =========================== */
+/* 8. RODAPÉ E GERAL */
+/* =========================== */
+
+/* Links do rodapé com efeito sutil */
+.footer-link-hover:hover {
+    color: var(--color-accent) !important;
+}
+
+/* Ícones sociais com animação */
+.social-icon-hover {
+    transition: color 0.3s ease;
+}
+
+.social-icon-hover:hover {
+    color: var(--color-accent) !important;
+}
+
+/* Botão Voltar ao Topo */
 .back-to-top-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #fcd34d; /* Amber 300 */
-    color: #78350f; /* Amber 800 */
+    background-color: var(--color-secondary); /* Azul da água */
+    color: #fff;
     border: none;
     border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    display: none; /* Inicia oculto */
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: opacity 0.3s, transform 0.3s;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s;
+    z-index: 1050;
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
 }
 
 .back-to-top-btn:hover {
-    background-color: #fbbf24; /* Amber 400 */
-    transform: scale(1.1);
+    background-color: var(--color-primary); /* Azul mais escuro no hover */
 }
 
-#blocotexto {
-    background-color: rgba(7, 89, 133, 0); /* Fundo preto com 40% de opacidade */
-}
-
-#carouselExampleCaptions .carousel-item img {
-    /* * Define uma altura máxima. 
-     * Você pode mudar 550px para qualquer valor que achar melhor (ex: 400px, 600px).
-    */
-    max-height: 550px;
-    
-    /* Isso garante que a imagem cubra a área de 550px sem distorcer. */
+/* Imagem do Modal */
+.modal-img-h {
+    height: 200px;
+    width: 100%;
     object-fit: cover;
-    
-    /* Garante que o object-fit funcione corretamente */
-    width: 100%; 
-    
-    /* Centraliza a imagem (verticalmente/horizontalmente) no corte */
-    object-position: center;
 }
-/* Adicione isso ao seu arquivo CSS */
-html {
-    /* Ajuste este valor para ser a altura exata da sua navbar.
-      Ex: Se sua navbar tem 70 pixels de altura, use 70px.
-    */
-    scroll-padding-top: 70px; 
+
+/* Botão de fechar do modal branco quando o header é azul */
+.btn-close-white {
+    filter: invert(1);
 }
