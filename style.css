@@ -164,3 +164,10 @@ h1, h2, h3 {
     /* Centraliza a imagem (verticalmente/horizontalmente) no corte */
     object-position: center;
 }
+/* Adicione isso ao seu arquivo CSS */
+html {
+    /* Ajuste este valor para ser a altura exata da sua navbar.
+      Ex: Se sua navbar tem 70 pixels de altura, use 70px.
+    */
+    scroll-padding-top: 70px; 
+}
