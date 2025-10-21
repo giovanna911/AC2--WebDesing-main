@@ -48,7 +48,7 @@ h2 {
 /* Estilo para quando a navbar é rolada */
 .navbar-scrolled {
     background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.027);
 }
 
 .navbar-logo {
