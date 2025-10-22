@@ -52,7 +52,7 @@ Clone o repositório:
 
 Bash
 
-git clone https://github.com/Marcossantucci/AC2--WebDesing.git
+git clone https://github.com/giovanna911/AC2--WebDesing-main
 Navegue até a pasta do projeto:
 
 Bash
