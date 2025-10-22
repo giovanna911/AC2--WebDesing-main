@@ -1,8 +1,9 @@
 Brasil Paradisíaco - Landing Page de Viagens
 Este é o repositório para a landing page "Brasil Paradisíaco", um projeto front-end que simula o site de uma agência de viagens focada em destinos turísticos no Brasil. A página é moderna, responsiva e interativa, criada para inspirar os usuários a explorarem as belezas naturais do país.
 
-📸 Screenshot
-<img width="1920" height="6117" alt="screencapture-file-C-Users-Marco-OneDrive-Documentos-GitHub-AC2-WebDesing-index-html-2025-10-07-21_36_33" src="https://github.com/user-attachments/assets/ff465c41-c39d-499c-8dc2-51a1c2179565" />
+📸 Print da pagina
+<img width="1920" height="6055" alt="screencapture-giovanna911-github-io-AC2-WebDesing-main-2025-10-21-22_01_45" src="https://github.com/user-attachments/assets/355985a6-ca4e-40ea-84f4-da566f382aaa" />
+
 
 🚀 Link para o Projeto
 Clique aqui para ver o repositório no GitHub
